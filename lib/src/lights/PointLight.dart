@@ -10,9 +10,9 @@ part of three;
 class PointLight extends Light
 {
   Vector3 _position;
-  num intensity, distance;
+  double intensity, distance;
 
-  PointLight( num hex, {this.intensity: 1, this.distance: 0} ) : super( hex )
+  PointLight( num hex, {this.intensity: 1.0, this.distance: 0.0} ) : super( hex )
   {
     //THREE.Light.call( this, hex );
 

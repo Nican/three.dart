@@ -241,7 +241,7 @@ class WebGLRenderer implements Renderer {
 
 	  _lights = {
 
-	    "ambient": [ 0, 0, 0 ],
+	    "ambient": [ 0.0, 0.0, 0.0 ],
 	    "directional": { "length": 0, "colors": [], "positions": [] },
 	    "point": { "length": 0, "colors": [], "positions": [], "distances": [] },
 	    "spot": { "length": 0, "colors": [], "positions": [], "distances": [], "directions": [], "angles": [], "exponents": [] }
@@ -5501,8 +5501,8 @@ class WebGLRenderer implements Renderer {
 
 	setupLights ( Program program, List<Light> lights ) {
 
+	  double r = 0.0, g = 0.0, b = 0.0;
 		var l, ll, light, n,
-		r = 0.0, g = 0.0, b = 0.0,
 		color, position, intensity, distance,
 
 		zlights = _lights;
@@ -5622,8 +5622,8 @@ class WebGLRenderer implements Renderer {
 				ppositions[ poffset + 1 ] = position.y;
 				ppositions[ poffset + 2 ] = position.z;
 
-				if (pdistances==null) { pdistances = new List(); pdistances.add(0); }
-				if (pdistances.length == 0) {pdistances.add(0);}
+				if (pdistances==null) { pdistances = new List(); pdistances.add(0.0); }
+				if (pdistances.length == 0) {pdistances.add(0.0);}
 				pdistances[ plength ] = distance;
 
 				plength += 1;
